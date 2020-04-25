@@ -3,10 +3,10 @@
 
 set -e
 
-host="$1"
+url="$1"
 
-until $(curl --output /dev/null --silent --head --fail http://$host); do
-  >&2 echo "Service '$host' not available yet - sleeping"
+until $(curl --output /dev/null --silent --head --fail $url); do
+  >&2 echo "Service '$url' not available yet - sleeping"
   sleep 1
 done
 
